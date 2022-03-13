@@ -1,4 +1,4 @@
-# tfmod_route53_endpoint
+# terraform_route53_endpoint
 
 Terraform module to create Route53 endpoints
 
@@ -16,10 +16,10 @@ ttl: Time to live
 
 ## Dependency
 
-Route53 <https://github.com/virsas/tfmod_route53>
+Route53 <https://github.com/virsas/terraform_route53>
 
 In this example I will use cloudfront endpoint. But you can use ALB, S3 or EC2 public IP instead.
-CF <https://github.com/virsas/tfmod_cloudfront>
+CF <https://github.com/virsas/terraform_cloudfront>
 
 ## Terraform example
 
@@ -33,7 +33,7 @@ variable "www_example_org" { default = "www.example.org" }
 # Route 53 Endpoints
 ######################
 module "route53_www_example_org_endpoint" {
-  source   = "github.com/virsas/tfmod_route53_endpoint"
+  source   = "github.com/virsas/terraform_route53_endpoint"
   zone_id  = module.route53_example_org.zone_id
   name     = var.www_example_org
   type     = "CNAME"
