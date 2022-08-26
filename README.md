@@ -33,7 +33,7 @@ variable "www_example_org" { default = "www.example.org" }
 # Route 53 Endpoints
 ######################
 module "route53_www_example_org_endpoint" {
-  source   = "github.com/virsas/terraform_route53_endpoint"
+  source   = "git::https://github.com/virsas/terraform_route53_endpoint.git?ref=v1.0.0"
   zone_id  = module.route53_example_org.zone_id
   name     = var.www_example_org
   type     = "CNAME"
